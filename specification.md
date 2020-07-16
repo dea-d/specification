@@ -1,6 +1,6 @@
 # dea.d
 
-Both APIs are tag-based, this means each request sent must be sent with a tag that will be used to reference the request for a status message or a reply.
+Both APIs are tag-based, this means each request sent must be sent with a tag that will be used to reference the request for a status message or a reply. There is a tag being added to all message payloads therefore, this however is something protocol-specification wise we need not worry about, as [tristanable](https://github.com/deavmi/tristanable) will take care of it, we must only keep track of our tags being used and which ones are expected where.
 
 ## Client API
 
@@ -9,7 +9,6 @@ Posting a new message:
 ```json
 {
     "action" : "post",
-    "tag" : <tag>,
     "payload" : {
         "text" : "Hello world"
     }
@@ -23,7 +22,6 @@ Enabling a channel:
 ```json
 {
 	"action" : "openChannel",
-	"tag" : <tag>,
 	"payload" : "<channelName>"
 }
 ```
@@ -44,7 +42,6 @@ Subscribing to a user:
 ```json
 {
 	"action" : "subscribe",
-	"tag" : <tag>,
 	"payload" : "<user>@<remoteServer>"
 }
 ```
@@ -54,7 +51,6 @@ Unsubscribing from a user:
 ```json
 {
 	"action" : "unsubscribe",
-	"tag" : <tag>,
 	"payload" : "<user>@<remoteServer>"
 }
 ```
