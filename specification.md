@@ -15,13 +15,24 @@ Posting a new message:
 }
 ```
 
-Enabling a channel:
+### Channel management
 
 > Channels are basically continuous feeds of data. There are several channels, "posts", "notifications" and "messages"
+
+Enabling a channel:
 
 ```json
 {
 	"action" : "openChannel",
+	"payload" : "<channelName>"
+}
+```
+
+Disabling a channel:
+
+```json
+{
+	"action" : "closeChannel",
 	"payload" : "<channelName>"
 }
 ```
