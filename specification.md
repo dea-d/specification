@@ -4,9 +4,9 @@ Both APIs are tag-based, this means each request sent must be sent with a tag th
 
 ## Client API
 
-### Posting a message
+### Posting a post
 
-Posting a new message can be accomplished by the following:
+Posting a new post can be accomplished by the following:
 
 ```json
 {
@@ -20,6 +20,30 @@ Posting a new message can be accomplished by the following:
 
 1. If a post is to be a reply to another post then the key `"parent"` must exist with an integer referring to the parent post's ID, `<parentID>`.
 
+The reply will be the following:
+
+```json
+{
+	"status" : <statusCode>,
+	"return" : <postID>
+}
+```
+
+1. The ID of the newly created post will be in the key `"return"` as an integer, `<postID>`.
+
+### Deleting a post
+
+Deleting a post can be accomplished by the following:
+
+```json
+{
+    "action" : "post",
+    "payload" : {
+        "text" : "Hello world",
+        "parent" : <parentID>
+    }
+}
+```
 
 ### Channel management
 
