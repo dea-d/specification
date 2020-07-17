@@ -37,11 +37,18 @@ Deleting a post can be accomplished by the following:
 
 ```json
 {
-    "action" : "post",
-    "payload" : {
-        "text" : "Hello world",
-        "parent" : <parentID>
-    }
+    "action" : "delete",
+	"payload" : <postID>
+}
+```
+
+1. The ID of the post to delete is `<postID>` in the key `"payload"`.
+
+The reply will be the following:
+
+```json
+{
+	"status" : <statusCode>
 }
 ```
 
