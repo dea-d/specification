@@ -4,16 +4,22 @@ Both APIs are tag-based, this means each request sent must be sent with a tag th
 
 ## Client API
 
-Posting a new message:
+### Posting a message
+
+Posting a new message can be accomplished by the following:
 
 ```json
 {
     "action" : "post",
     "payload" : {
-        "text" : "Hello world"
+        "text" : "Hello world",
+        "parent" : <parentID>
     }
 }
 ```
+
+1. If a post is to be a reply to another post then the key `"parent"` must exist with an integer referring to the parent post's ID, `<parentID>`.
+
 
 ### Channel management
 
